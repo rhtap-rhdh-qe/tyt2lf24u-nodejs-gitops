@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tyt2lf24u-nodejs-gitops
+  description: This is GitOps manifest for tyt2lf24u-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=tyt2lf24u-nodejs
+    backstage.io/kubernetes-id: tyt2lf24u-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: tyt2lf24u-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:tyt2lf24u-nodejs
